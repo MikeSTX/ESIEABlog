@@ -1,0 +1,69 @@
+<!--
+  > Display if the user is connect
+    He can't see his/her conversation
+    **  **  **  **  **   ** **  **  **  **
+-->
+<div class = "divNoChat" ng-show = "!InformationConnectUser.connect">
+
+  <div class = "divIconNoChat">
+    <i class = "zmdi zmdi-block zmdi-hc-5x" style = "color: #FF0000;"></i>
+  </div>
+
+  <p class = "labelNoChat">
+    Sorry, you're not connect to your blog's account, so you're not allowed to
+    acces to the chat of ESIEA Blog
+    <br /><br />
+    if you wan't to, you can login or sign in by cliking <a ng-href = "#/account">here</a>
+  </p>
+
+</div>
+
+
+<!--
+  > Display if the user is connect
+    He can see his/her conversation
+    **  **  **  **  **   ** **  **  **  **
+-->
+<div ng-controller = "chatCrtl" ng-show = "InformationConnectUser.connect">
+
+  <div class = "divConversationChat" ng-repeat = "allConversation in allConversation">
+
+    <div class = "divPseudoRecipient">
+      <i class = "zmdi zmdi-comment zmdi-hc-2x" style = "display: inline; color: #3D3935;"></i>
+      <h4 ng-show = "displayPseudoConversation(allConversation.user1)" style = "display: inline; margin-left: 10px; color: #3D3935"><b>{{allConversation.user2}}</b></h4>
+      <h4 ng-show = "!displayPseudoConversation(allConversation.user1)" style = "display: inline; margin-left: 10px; color: #3D3935"><b>{{allConversation.user1}}</b></h4>
+
+    </div>
+
+    <div class = "divDialog">
+
+      <div ng-class = "{divMessageUser: allDialog.sender == InformationConnectUser.Pseudo, divMessageOtherUser: allDialog.sender != InformationConnectUser.Pseudo}" ng-repeat = "allDialog in allDialog | orderBy: ['-date'] | filter: {idConversation: allConversation._id}">
+        <h5><b>{{allDialog.message}}</b></h5>
+
+        <button class = 'btnDeleteMessage' ng-click = "deleteMessage(allDialog._id)">
+          <i class = "zmdi zmdi-delete" style = "color: #FFF;"></i>
+        </button>
+        
+        <h6 ng-class = "{divDateMessageUser: allDialog.sender == InformationConnectUser.Pseudo, divDateMessageOtherUser: allDialog.sender != InformationConnectUser.Pseudo}"><i>Send the {{allDialog.date | date:"MM/dd/yyyy 'at' h:mma"}}</i></h6>
+      </div>
+
+    </div>
+
+    <div class = "divAnswerMessage">
+      <form name = "formAnswerMessage">
+        <h4><b>Answer</b></h4>
+
+        <textarea class = "textareaAnswerMessage" ng-model = "textareaAnswerMessage" name = "textareaAnswerMessage"></textarea>
+
+        <button class = "btnAnswerMessage" type = "submit" ng-click = "answerMessage(allConversation, textareaAnswerMessage)">
+          <i class = "zmdi zmdi-mail-send zmdi-hc-2x" style = "display: inline; color: #FFF;"></i>
+        </button>
+      </form>
+    </div>
+
+
+    </div>
+
+  </div>
+
+</div>

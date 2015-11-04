@@ -1,0 +1,341 @@
+/* **
+  Design of all elements of the articles
+  ------------------------------------------------------------------------------
+** */
+.divArticle
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 100%;
+  height: auto;
+
+  /* Margin & padding */
+  margin-bottom: 70px;
+
+  /* Color & shadow */
+  background-color: #FFF;
+  box-shadow: 3px 3px 10px #000;
+
+  /* Border */
+  border-radius: 6px;
+}
+
+  .titleArticle
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: 60px;
+
+    /* Margin & padding */
+    padding-top: 5px;
+    padding-left: 2%;
+
+    /* Police */
+    font-style: Droid sans;
+    font-weight: bold;
+    font-size: 35px;
+
+    /* Border */
+    border-bottom: 1px solid #000;
+    box-shadow: 1px 0px 3px #000;
+
+    /* Color & shadow */
+    background-color: #F0F0F0;
+    color: #3D3934;
+  }
+
+  .headerArticle
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: auto;
+
+    /* Color & shadow */
+    background-color: #FFF;
+
+    /* Margin & padding */
+    padding: 8%;
+
+
+    /* Police */
+    font-family: "Verdana";
+    font-weight: bold;
+    font-size: 18px;
+
+    /* Text overflow */
+    word-wrap: break-word;
+  }
+
+  .contentArticle
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: auto;
+
+    /* Color & Shadow */
+    background-color: #FFF;
+
+    /* Margin & padding */
+    padding: 8%;
+    padding-top: 0%;
+
+    /* Police */
+    font-family: "Trebuchet";
+    font-size: 15px;
+
+    /* Text overflow */
+    word-wrap: break-word;
+  }
+
+  .divSocialNetwork
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: 40px;
+
+    /* Margin & padding */
+    margin-top: -20px;
+    margin-bottom: 3px;
+    padding-top: 7px;
+    padding-left: 42%;
+
+    /* Color & shadow */
+    background-color: #FFF;
+  }
+
+    .btnSocialNetwork
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: 30px;
+      height: 30px;
+
+      /* Margin & padding */
+      margin-right: 5px;
+
+      /* Color & shadow */
+      background: #CFC9C4 ;
+
+      /* Border */
+      border: none;
+      outline: none;
+      border-radius: 50%;
+
+      /* Animation */
+      transition-property: margin-top;
+      transition-duration: 0.2s;
+
+    }
+
+      .btnSocialNetwork:hover
+      {
+        /* Animation */
+        margin-top: -5px;
+      }
+
+  .divActionAuthorOnArticle
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: 40px;
+
+    /* Margin & padding */
+    margin-bottom: 3px;
+    padding-top: 7px;
+    padding-left: 46%;
+
+    /* Color & shadow */
+    background-color: #FFF;
+  }
+
+    .btnActionAuthorOnArticle
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: 30px;
+      height: 30px;
+
+      /* Margin & padding */
+      margin-right: 5px;
+
+      /* Color & shadow */
+      background: #CFC9C4 ;
+
+      /* Border */
+      border: none;
+      outline: none;
+      border-radius: 50%;
+
+      /* Animation */
+      transition-property: margin-top;
+      transition-duration: 0.2s;
+    }
+
+      .btnActionAuthorOnArticle:hover
+      {
+        /* Animation */
+        margin-top: -5px;
+      }
+
+
+  .div_infoArticle
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: 60px;
+
+    /* Border */
+    border-top: 1px solid #318CE7;
+
+    /* Color & shadow */
+    background-color: #FFF;
+    box-shadow: 1px 1px 3px #000;
+  }
+
+
+    .divThumb
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: auto;
+      height: 50px;
+
+      /* Margin & padding */
+      margin-left: 2%;
+      margin-top: 5px;
+    }
+
+      .thumbUp
+      {
+        /* position */
+        display: inline;
+        float: left;
+
+        /* Size */
+        width: 100px;
+        height: 50px;
+
+        /* Margin & padding */
+        padding-top: 5px;
+
+        /* Color & shadow */
+        background-color: #00933B;
+        box-shadow: 1px 1px 2px #000;
+
+        /* Border */
+        border-radius: 10px;
+      }
+
+      .thumbDown
+      {
+        /* position */
+        display: inline;
+        float: left;
+
+        /* Size */
+        width: 100px;
+        height: 50px;
+
+        /* Margin & padding */
+        margin-left: 5px;
+        padding-left: 2px;
+        padding-top: 5px;
+
+        /* Color & shadow */
+        background-color: #FF0000;
+        box-shadow: 1px 1px 2px #000;
+
+        /* Border */
+        border-radius: 10px;
+      }
+
+        .btnThumbArticle
+        {
+
+          /* Margin & padding */
+          margin-top: 5px;
+          margin-left: 5px;
+
+          /* Color & shdow */
+          background-color: transparent;
+          color: #FFF;
+
+          /* Border */
+          border: none;
+          outline: none;
+        }
+
+        .infoVote
+        {
+          /* Position */
+          display: inline;
+
+          /* margin & padding */
+          margin-left: 5px;
+          margin-right: 10px;
+
+          /* Police */
+          font-size: 20px;
+          font-family: Verdana;
+
+          /* Color & shadow */
+          color: #FFF;
+
+        }
+
+
+
+    .divInfoUser
+    {
+      /* Position */
+      display: inline;
+      float: right;
+
+      /* Size */
+      height: 60px;
+      width: auto;
+
+      /* margin & padding */
+      margin-right: 10px;
+
+      /* Police */
+      font-family: "Trebuchet";
+      font-style: italic;
+      font-size 8px;
+    }

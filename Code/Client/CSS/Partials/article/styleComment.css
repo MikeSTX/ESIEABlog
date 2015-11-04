@@ -1,0 +1,189 @@
+/* **
+  Design of all elements of the comments
+  ------------------------------------------------------------------------------
+** */
+.divCommentArticle
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 100%;
+  height: auto;
+
+  /* Margin */
+  margin-top: 10px;
+}
+
+  .tabComments
+  {
+    /* Size */
+    width: 70%;
+
+    /* Margin & padding */
+    margin-top: 10px;
+    margin-left: 13%;
+    margin-bottom: 20px;
+  }
+
+    .inputTitleComment
+    {
+      /* Size */
+      width: 90%;
+
+      /* margin & padding */
+      margin-left: 20px;
+
+      /* Border */
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #318CE7;
+
+      /* Police */
+      font-family: Verdana;
+      font-weight: bold;
+    }
+
+    .textAreaComment
+    {
+      /* Size */
+      width: 90%;
+      height: 100px;
+
+      /* margin & padding */
+      margin-left: 20px;
+      padding: 3px;
+
+      /* Others */
+      resize: none;
+    }
+
+    .btnSubmitComment
+    {
+      /* Size */
+      width: 50px;
+      height: 50px;
+
+      /* Color & shadow */
+      background-color: #318CE7;
+      color: #FFF;
+      box-shadow: 1px 1px 3px #000;
+
+      /* Boder */
+      border-radius: 50%;
+      border: none;
+      outline: none;
+
+    }
+
+
+  .displayAllComments
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 80%;
+    height: 300px;
+
+    /* Margin & padding */
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+
+    .titleAllsComments
+    {
+      /* Position */
+      display: block;
+      float: left;
+
+      /* Size */
+      width: 100%;
+      height: 50px;
+
+      /* Border */
+      border-bottom: 1px solid #318CE7;
+    }
+
+    .divContainerAllComments
+    {
+      /* Position */
+      display: block;
+      float: left;
+
+      /* Size */
+      width: 100%;
+      height: 250px;
+
+      /* Margin & padding */
+      padding: 10px;
+
+      /* Overflow */
+      overflow-y: scroll;
+
+    }
+
+      .divDisplayComment
+      {
+        /* Position */
+        display: inline;
+        float: left;
+
+        /* Size */
+        width: 100%;
+        height: auto;
+
+        /* Margin & padding */
+        margin-bottom: 10px;
+      }
+
+        .iconDisplayComment
+        {
+          /* Position */
+          display: inline;
+          float: left;
+
+          /* Size */
+          width: 50px;
+          height: auto;
+
+          /* Margin & padding */
+          padding-top: 5px;
+        }
+
+        .containDisplayComment
+        {
+          /* Position */
+          display: inline;
+          float: left;
+
+          /* Size */
+          width: 75%;
+          height: auto;
+
+          /* Margin & padding */
+          padding: 5px;
+
+          /* Border */
+          border: 1px solid #000;
+          border-radius: 4px;
+        }
+
+          .informationDisplayComment
+          {
+            /* Position */
+            display: block;
+            float: left;
+
+            /* Size */
+            width: 100%;
+            height: 20px;
+
+            /* Border */
+            border-top: 1px dotted #CFC9C4;
+          }

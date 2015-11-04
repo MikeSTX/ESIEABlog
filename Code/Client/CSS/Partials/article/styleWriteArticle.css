@@ -1,0 +1,170 @@
+/* **
+  Design of all elements of the form to write a new article
+  ------------------------------------------------------------------------------
+** */
+.divNoWriteArticle
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 75%;
+  height: 150px;
+
+  /* color & shadow */
+  background-color: #3D3935;
+  box-shadow: 1px 1px 3px #000;
+
+  /* border */
+  border-radius: 4px;
+}
+
+  .divIconNoWriteArticle
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 100px;
+    height: 100%;
+
+    /* Margin & padding */
+    padding-left: 15px;
+    padding-top: 40px;
+  }
+
+  .labelNoWriteArticle
+  {
+    /* Margin & padding */
+    margin: 10px;
+
+    /* Police */
+    font-family: verdana;
+    font-size: 13px;
+    font-weight: bold;
+
+    /* Color & shadow */
+    color: #FFF;
+
+  }
+
+
+
+.inputTitleNewArticle
+{
+
+  /* Position */
+  display: inline;
+  float: left;
+
+  /* Size */
+  width: 90%;
+  height: 40px;
+
+  /* Margin & paddin */
+  padding-left: 2%;
+
+  /* Border */
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #318CE7;
+
+  /* Police */
+  font-family: verdana;
+  font-size: 18px;
+  font-weight: bold;
+  color: #3D3935;
+
+}
+
+
+.textAreaHeaderNewArticle
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 90%;
+  height: 200px;
+
+  /* Margin & paddin */
+  padding: 5px;
+
+  /* Border */
+  border: 1px solid #3D3935;
+  border-radius: 4px;
+  outline: none;
+
+  /* Police */
+  font-family: verdana;
+  font-size: 14px;
+  font-weight: bold;
+  color: #3D3935;
+
+  /* Other */
+  resize: none;
+}
+
+
+.textAreaContentNewArticle
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 90%;
+  height: 500px;
+
+  /* Margin & paddin */
+  padding: 5px;
+
+  /* Border */
+  border: 1px solid #3D3935;
+  border-radius: 4px;
+  outline: none;
+
+  /* Police */
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: bold;
+  color: #3D3935;
+
+  /* Other */
+  resize: none;
+}
+
+
+.btnPublishNewArticle
+{
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 300px;
+    height: 40px;
+
+    /* Margin & padding */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30%;
+
+    /* border */
+    outline: none;
+    border: none;
+    border-radius: 4px;
+
+    /* Police */
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+
+    /* Color & shadow */
+    color: #FFF;
+    background-color: #318CE7;
+    box-shadow: 1px 1px 3px #000;
+}

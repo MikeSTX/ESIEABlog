@@ -1,0 +1,166 @@
+#searchUser
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  height: 30px;
+  width: 80%;
+  min-width: 350px;
+
+  /* Margin & padding */
+  margin-top: 10px;
+  padding-left: 55px;
+
+  /* Color & shadow */
+  box-shadow: 1px 1px 3px #000;
+  color: #010101;
+
+  /* Border */
+  border-radius: 2px;
+  outline: none;
+  border: none;
+
+  /* Police */
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+  #icone_searchUser
+  {
+    /* Position */
+    position: absolute;
+    z-index: 2;
+
+    /* Margin & padding */
+    margin-left: 15px;
+    margin-top: 12px;
+
+    /* Color & shadow */
+    color: #3D3935;
+  }
+
+  .listUsers
+  {
+    /* Position */
+    visibility: hidden;
+    position: absolute;
+    z-index: &;
+
+    /* Size */
+    height: 80px;
+    width: 58%;
+    min-width: 350px;
+
+    /* Margin & padding */
+    margin-top: 43px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    /* Color & shadow */
+    background-color: #F0F0F0;
+    box-shadow: 1px 1px 3px #000;
+
+    /* Border */
+    border-radius: 2px;
+    outline: none;
+    border: none;
+
+    /* Overflow */
+    overflow-y: scroll;
+  }
+
+    .liUser
+    {
+      /* position */
+      display: block;
+      float: left;
+
+      /* Size */
+      width: 96%;
+      height: 20px;
+
+      /* Margin & padding */
+      margin-left: 2%;
+      margin-right: 2%;
+      padding-left: 5px;
+    }
+
+      .liUser:hover
+      {
+        /* Color & shadow */
+        background-color: #878785;
+      }
+
+  .div_SendMessageForChat
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 100%;
+    height: 150px;
+
+    /* Margin & padding */
+    margin-top: 15px;
+
+  }
+
+    .messageToSendToChat
+    {
+        /* Position */
+        display: inline;
+        float: left;
+
+        /* Size */
+        width: 80%;
+        height: 150px;
+
+        /* Margin & padding */
+        padding: 5px;
+
+        /* Color & shadow */
+        box-shadow: 1px 1px 3px #000;
+
+        /* Police */
+        font-family: Verdana;
+        font-size: 14px;
+        font-weight: bold;
+
+        /* Border */
+        border: 1px solid #000;
+        border-radius: 4px;
+        outline: none;
+
+        /* Overflow */
+        overflow-y: scroll;
+
+        /* Other */
+        resize: none;
+    }
+
+    .btnSendMessage
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: 50px;
+      height: 50px;
+
+      /* Margin & padding */
+      margin-left: 20px;
+
+      /*  Color & shadow */
+      background-color: #318CE7;
+      box-shadow: 1px 1px 3px #000;
+
+      /* Border */
+      border: none;
+      outline: none;
+      border-radius: 50%;
+    }

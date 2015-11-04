@@ -1,0 +1,55 @@
+<!--
+  > Display if the user is connect
+    He can't send a message
+    **  **  **  **  **   ** **  **  **  **
+-->
+<!--<div class = "divNoChat" ng-show = "!InformationConnectUser.connect">
+
+  <div class = "divIconNoChat">
+    <i class = "zmdi zmdi-block zmdi-hc-5x" style = "color: #FF0000;"></i>
+  </div>
+
+  <p class = "labelNoChat">
+    Sorry, you're not connect to your blog's account, so you're not allowed to
+    acces to the chat of ESIEA Blog
+    <br /><br />
+    if you wan't to, you can login or sign in by cliking <a ng-href = "#/account">here</a>
+  </p>
+
+</div>
+
+
+
+<!--
+  > Display if the user is connect
+    He can send a message
+    **  **  **  **  **   ** **  **  **  **
+    ng-show = "InformationConnectUser.connect"
+-->
+<div ng-controller = "chatCrtl" >
+
+  <form name = "formSendMessage" novalidate>
+
+    <i class = "zmdi zmdi-search zmdi-hc-2x" id = "icone_searchUser"></i>
+    <input autocomplete = "off" id = "searchUser" placeholder = "Recipient" name = "searchUser"
+      ng-model = "searchUser" ng-focus = "displayListUsers()" ng-blur = "listUsers = {'visibility':'hidden'}" ng-minlength = "1">
+
+    <div class = "listUsers" ng-style = "listUsers">
+      <div class = "liUser" ng-repeat = "allUsers in allUsers | filter: searchUser:Pseudo">
+        <i class = "zmdi zmdi-account-circle" style = "color: #3D3935; display: inline;"></i>
+        <span>{{allUsers.Pseudo}}</span>
+      </div>
+    </div>
+
+    <div class = "div_SendMessageForChat">
+
+      <textarea class = "messageToSendToChat" ng-model = "messageToSendToChat" name = "messageToSendToChat"></textarea>
+
+      <button class = "btnSendMessage" type = "submit" ng-click = "sendMessage()" type = "submit" ng-disabled = "formSendMessage.$invalid">
+        <i class="zmdi zmdi-mail-send zmdi-hc-2x" style = "margin-left: 5px; color: #FFF;"></i>
+      </button>
+    </div>
+
+  </form>
+
+</div>

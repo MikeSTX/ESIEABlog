@@ -1,0 +1,301 @@
+/* **
+  Design of all elements of account template
+  ------------------------------------------------------------------------------
+** */
+.inputAccount
+{
+  /* Size */
+  width: 95%;
+  height: 40px;
+
+  /* Margin & padding */
+  padding-left: 10px;
+
+  /* Police */
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+
+  /* Color & shadow */
+  color: #3D3935;
+  box-shadow: 1px 1px 3px #000;
+
+  /* Border */
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+  .errorInputAccount
+  {
+    /* Police */
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+
+    /* Color & shadow */
+    color: #CFC9C4;
+  }
+
+
+.divNoAccount
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 100%;
+  height: auto;
+
+  /* Color & shadow */
+  box-shadow: 1px 1px 5px #000;
+
+  /* Border */
+  border-radius: 4px;
+}
+
+  .divLogin
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 50%;
+    height: 100%;
+
+    /* Margin & padding */
+    padding: 20px;
+
+  }
+
+
+  .divSignin
+  {
+    /* Position */
+    display: inline;
+    float: right;
+
+    /* Size */
+    width: 50%;
+    height: auto;
+
+    /* Margin & padding */
+    padding: 20px;
+
+    /* Border */
+    border-left: 1px dotted #393534;
+
+
+  }
+
+  .btnSubmitConnexionUser
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 150px;
+    height: 40px;
+
+    /* Margin */
+    margin-top: 35px;
+    margin-left: 30%;
+
+    /* border */
+    outline: none;
+    border: none;
+    border-radius: 3px;
+
+    /* Police */
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+
+    /* Color & shadow */
+    color: #FFF;
+    box-shadow: 1px 1px 3px #000;
+  }
+
+  .btnSubmitSignIn
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 150px;
+    height: 40px;
+
+    /* Margin */
+    margin-top: 35px;
+    margin-left: 30%;
+
+    /* border */
+    outline: none;
+    border: none;
+    border-radius: 3px;
+
+    /* Police */
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+
+    /* Color & shadow */
+    color: #FFF;
+    box-shadow: 1px 1px 3px #000;
+  }
+
+.divAccount
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 100%;
+  height: 220px;
+
+  /* Color & shadow */
+  box-shadow: 1px 1px 5px #000;
+
+  /* Border */
+  border-radius: 4px;
+}
+
+  .pictureAccount
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 15%;
+    height: 100%;
+
+    /* Margin & padding */
+    padding-top:75px;
+    padding-left: 4%;
+
+    /* Color & shadow */
+    background-color: #CFC9C4;
+  }
+
+  .divInformationsAccount
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 80%;
+    height: 150px;
+
+    /* Margin & padding */
+    padding: 10px;
+  }
+
+    #btnEditAccount
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: 50px;
+      height: 50px;
+
+      /* Margin & padding */
+      margin-left: 35%;
+
+      /* Color & shadow */
+      background-color: transparent;
+      color: #0266C8;
+
+      /* Border */
+      border: 1px solid #0266C8;
+      outline: none;
+      border-radius: 50%;
+
+      /* Animation */
+      transition-property: color, background-color;
+      transition-duration: 0.2s;
+    }
+
+      #btnEditAccount:hover
+      {
+        /* Animation */
+        color: #FFF;
+        background-color: #0266C8;
+      }
+
+    #btnLogoutAccount
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: 50px;
+      height: 50px;
+
+      /* Margin & padding */
+      margin-left: 5px;
+
+      /* Color & shadow */
+      color: #00933B;
+      background-color: transparent;
+
+      /* Border */
+      border: 1px solid #00933B;
+      outline: none;
+      border-radius: 50%;
+
+      /* Animation */
+      transition-property: color, background-color;
+      transition-duration: 0.2s;
+    }
+
+      #btnLogoutAccount:hover
+      {
+        /* Animation */
+        color: #FFF;
+        background-color: #00933B;
+      }
+
+    #btnRemoveAccount
+    {
+      /* Position */
+      display: inline;
+      float: left;
+
+      /* Size */
+      width: 50px;
+      height: 50px;
+
+      /* Margin & padding */
+      margin-left: 5px;
+
+      /* Color & shadow */
+      color: #F90101;
+      background-color: transparent;
+
+      /* Border */
+      border: 1px solid #F90101;
+      outline: none;
+      border-radius: 50%;
+
+      /* Animation */
+      transition-property: color, background-color;
+      transition-duration: 0.2s;
+    }
+
+      #btnRemoveAccount:hover
+      {
+        /* Animation */
+        color: #FFF;
+        background-color: #F90101;
+      }
