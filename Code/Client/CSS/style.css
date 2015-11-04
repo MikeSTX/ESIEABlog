@@ -1,0 +1,433 @@
+/* **
+  Design of all elements of the top menu
+  ------------------------------------------------------------------------------
+** */
+#topMenu
+{
+  /* Position */
+  position: fixed;
+
+  /* Size */
+  width: 100%;
+  height: 50px;
+
+
+  /* Color & shadow */
+  background-color: #318CE7;
+  box-shadow: 1px 1px 3px #000;
+}
+
+  #BTN_toggleLeftMenu
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 40px;
+    height: 40px;
+
+    /* Margin & padding */
+    margin-left: 20px;
+    margin-top: 5px;
+
+
+    /* Border */
+    border-radius: 50%;
+    outline: none;
+    border: none;
+
+    /* Color & shadow */
+    background-color: transparent;
+    box-shadow: 1px 1px 1px #000;
+  }
+
+    #BTN_toggleLeftMenu:hover
+    {
+      /* cursor */
+      cursor: pointer;
+    }
+
+    #BTN_toggleLeftMenu:active
+    {
+      /* Color & shadow */
+      box-shadow: 1px 1px 4px #000;
+    }
+
+  #titlePage
+  {
+
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    width: 150px;
+
+    /* Margin & padding */
+    margin-left: 20px;
+    margin-top: 9px;
+
+    /* Police */
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+
+    /* Color */
+    color : #FFF;
+
+    /* Overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+
+  #searchArticle
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Size */
+    height: 30px;
+    width: 50%;
+    min-width: 350px;
+
+    /* Margin & padding */
+    margin-left: 80px;
+    margin-top: 10px;
+    padding-left: 55px;
+
+    /* Color & shadow */
+    box-shadow: 1px 1px 3px #000;
+    color: #010101;
+
+    /* Border */
+    border-radius: 2px;
+    outline: none;
+    border: none;
+
+    /* Police */
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+    #icone_search
+    {
+      /* Position */
+      position: absolute;
+      z-index: 2;
+
+      /* Margin & padding */
+      margin-left: 95px;
+      margin-top: 12px;
+
+      /* Color & shadow */
+      color: #318CE7;
+    }
+
+
+
+
+/* **
+  Design of all elements of the left menu
+  ------------------------------------------------------------------------------
+** */
+#leftMenu
+{
+  /* Position */
+  position: fixed;
+
+  /* Margin & padding */
+  margin-top: 52px;
+
+  /* Size */
+  width: 170px;
+  height : 700px;
+
+  /* Color & shadow */
+  background-color: #F0F0F0;
+  box-shadow: 1px 1px 3px #000;
+}
+
+
+  .linkLeftMenu
+  {
+    /* Position */
+    display: block;
+    float: left;
+
+    /* Size */
+    width: 95%;
+    height: 50px;
+
+    /* Margin & padding */
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2%;
+    padding-top: 10px;
+    padding-left: 5%;
+
+    /* Color & shadow */
+    background-color: transparent;
+
+    /* Border */
+    border: none;
+    outline: none;
+    border-radius: 4px;
+  }
+
+    .linkLeftMenu:hover
+    {
+      background-color: #CFC9C4;
+    }
+
+  .labelBtnLeftMenu
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Margin & padding */
+    margin-left: 15px;
+    margin-top: 5px;
+
+    /* Police */
+    color: #3D3935;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+
+
+
+
+
+
+
+/* **
+  Design of all elements of the content
+  ------------------------------------------------------------------------------
+** */
+#content
+{
+  /* Position */
+  display: block;
+  float: left;
+
+  /* Size */
+  width: 73%;
+  height: auto;
+
+  /* Margin & padding */
+  margin-left: 210px;
+  margin-top: 85px;
+  padding-top: 10px;
+
+  /* Color & shadow */
+  background-color: #FFF;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* **
+  Design of all elements of the interactive menu
+  ------------------------------------------------------------------------------
+** */
+.BTN_writeNewArticle
+{
+  /* Position */
+  position: fixed;
+
+  /* Size */
+  width: 60px;
+  height: 60px;
+
+  /* Margin & padding */
+  margin-left: 1200px;
+  margin-top: 600px;
+  padding-left: 22px;
+  padding-top: 15px;
+
+  /* Color & shadow */
+  background-color: #0131B4;
+
+  /* Border */
+  outline: none;
+  border: none;
+  border-radius: 50%;
+
+  /* Animation */
+  transition: transform 0.5s;
+}
+
+
+  .BTN_writeNewArticle:hover
+  {
+    /* Cursor */
+    cursor: pointer;
+
+    /* Animation */
+    transform: rotate(360deg);
+  }
+
+#BTN_writeNewMessage
+{
+  /* Position */
+  position: fixed;
+  z-index: 1;
+
+  /* Size */
+  width: 50px;
+  height: 50px;
+
+  /* Margin & padding */
+  margin-left: 1205px;
+  margin-top: 540px;
+  padding-left: 14px;
+  padding-top: 12px;
+
+  /* Color & shadow */
+  background-color: #878785;
+
+  /* Border */
+  outline: none;
+  border: none;
+  border-radius: 50%;
+
+  /* Other */
+  opacity: 0.0;
+}
+
+#menuRightBottom
+{
+  /* Position */
+  position: fixed;
+  z-index: 0;
+
+  /* Size */
+  width: 60px;
+  height: 320px;
+
+  /* Margin & padding */
+  margin-left: 1200px;
+  margin-top: 350px;
+
+  background-color: transparent;
+
+
+  /* Border */
+  outline: none;
+  border: none;
+}
+
+
+
+
+
+/* **
+  Design of all elements in a div which inform user of the server status
+  ------------------------------------------------------------------------------
+** */
+#serverInformation
+{
+  /* Position */
+  position: fixed;
+  z-index: 0;
+
+  /* Size */
+  width: auto;
+  height: 70px;
+
+  /* Margin & padding */
+  margin-top: 550px;
+  margin-left: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  /* Color & shadow */
+  background-color: #3D3934;
+  box-shadow: 1px 1px 4px #000;
+
+}
+
+
+  #btn_closeServerInformations
+  {
+    /* Postion */
+    position: block;
+    float: right;
+
+    /* Margin & padding */
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-right: 3px;
+
+    /* Color & shadow */
+    background-color: #3D3934;
+    color: #CFC9C4;
+
+    /* Border */
+    border: none;
+    border-radius: 50%;
+    outline: none;
+  }
+
+    #btn_closeServerInformations:hover
+    {
+      /* Color & shadow */
+      background-color: #FFF;
+    }
+
+  .iconServerInformation
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Margin & padding */
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+
+    /* Color & shadow */
+    background-color: #3D3934;
+
+    /* Border */
+    border: none;
+    outline: none;
+
+    /* Cursor */
+    cursor: default;
+  }
+
+  #labelServerInformation
+  {
+    /* Position */
+    display: inline;
+    float: left;
+
+    /* Margin & padding */
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 23px;
+
+    /* Police */
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+
+    /* Color & shadow */
+    color: #FFF;
+  }

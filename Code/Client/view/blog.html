@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang = "en-US">
+
+	<head>
+
+		<!-- CSS links -->
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/Partials/styleAccount.css">
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/Partials/chat/styleChat.css">
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/Partials/chat/styleWriteMessage.css">
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/Partials/article/styleArticle.css">
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/Partials/article/styleWriteArticle.css">
+		<link rel = "stylesheet" type = "text/css" href = "../CSS/Partials/article/styleComment.css">
+
+		<link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+
+		<!-- BOOTSTRAP CSS link -->
+		<link rel = "stylesheet" href = "../CSS/Bootstrap/bootstrap.min.css">
+
+		<!-- Icon of the blog -->
+		<link rel = "icon" type = "image/png" href = "../CSS/Pictures/icone1.ico" />
+
+		<!-- Title of the page -->
+		<title>Blog ESIEA</title>
+
+	</head>
+
+
+	<body style = "overflow-y: scroll;" ng-app = "blogESIEA" ng-controller = "index">
+
+
+		<!--
+			*	*
+			__________________________________
+				>> Div about top menu
+			__________________________________
+			* *
+		-->
+		<div id = "topMenu" ng-style = "styleTopMenu">
+
+			<button id = "BTN_toggleLeftMenu" onclick="toggleLeftMenu()">
+			  <i class = "zmdi zmdi-menu zmdi-hc-2x" style = "color: #FEFEFE;"></i>
+			</button>
+
+			<span id = "titlePage" ng-model = "titlePage">{{titlePage}}</span>
+
+			<i class = "zmdi zmdi-search zmdi-hc-2x" id = "icone_search"></i>
+			<input id = "searchArticle" ng-model = "searchArticle" placeholder = "Search" ng-focus = "goSearchStyle()" ng-blur = "goNominalStyle()"/>
+
+			</div>
+		</div>
+
+
+
+		<!--
+			*	*
+			__________________________________
+				>> Div about left menu
+			__________________________________
+			* *
+		-->
+		<div id = "leftMenu">
+
+			<a class = "linkLeftMenu" ng-href = "#/account" style = "margin-top: 10px; margin-bottom: 10px;">
+				<i class = "zmdi zmdi-account-circle zmdi-hc-2x" style = "color: #318CE7; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Account</span>
+			</a>
+
+			<hr style = "border: 1px solid #CFC9C4; width: 95%; margin-bottom: 5px;"/>
+
+			<a class = "linkLeftMenu" ng-href = "#/articles">
+				<i class = "zmdi zmdi-file zmdi-hc-2x" style = "color: #3D3935; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Articles</span>
+			</a>
+
+			<a class = "linkLeftMenu" ng-href = "#/mostVoted">
+				<i class = "zmdi zmdi-trending-up zmdi-hc-2x" style = "color: #87591A; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Most voted</span>
+			</a>
+
+			<a class = "linkLeftMenu" ng-href = "#/bestArticle">
+				<i class = "zmdi zmdi-thumb-up zmdi-hc-2x" style = "color: #00933B; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Best</span>
+			</a>
+
+			<a class = "linkLeftMenu" ng-href = "#/worstArticle">
+				<i class = "zmdi zmdi-thumb-down zmdi-hc-2x" style = "color: #FF0000; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Worst</span>
+			</a>
+
+			<hr style = "border: 1px solid #CFC9C4; width: 95%; margin-bottom: 5px;"/>
+
+			<a class = "linkLeftMenu" ng-href = "#/chat">
+				<i class = "zmdi zmdi-comments zmdi-hc-2x" style = "color: #5A78BE; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Chat</span>
+			</a>
+
+			<!--<hr style = "border: 1px solid #CFC9C4; width: 95%; margin-bottom: 5px;"/>
+
+			<a class = "linkLeftMenu" ng-href = "#/settings">
+				<i class = "zmdi zmdi-settings zmdi-hc-2x" style = "color: #3D3934; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Settings</span>
+			</a>
+
+			<a class = "linkLeftMenu" ng-href = "#/contact">
+				<i class = "zmdi zmdi-local-phone zmdi-hc-2x" style = "color: #3D3934; float: left;"></i>
+				<span class = "labelBtnLeftMenu">Contact</span>
+			</a>-->
+
+		</div>
+
+
+
+		<!--
+			*	*
+			_______________________________________________________________
+				>> Div about button menu at the bottom right of the page
+			_______________________________________________________________
+			* *
+		-->
+		<div id = "menuRightBottom">
+		</div>
+
+		<a id = "BTN_writeNewMessage" ng-show = "InformationConnectUser.connect" ng-href = "#/writeMessage" data-toggles = "tooltip" data-placement = "left" title = "Write new message">
+			<i class = "zmdi zmdi-comment-edit zmdi-hc-2x" style = "color: #FFF;"></i>
+		</a>
+
+
+		<a class = "BTN_writeNewArticle"  ng-show = "InformationConnectUser.connect" ng-href = "#/writeArticle" data-toggles = "tooltip" data-placement = "left" title = "Write new article" >
+			<i class = "zmdi zmdi-plus zmdi-hc-2x" style = "color: #FFF;"></i>
+		</a>
+
+
+
+
+		<!--
+			*	*
+			_______________________________________________________________
+				>> Div which contain the partials HTML part of the website
+			_______________________________________________________________
+			* *
+		-->
+		<div id = "content" ng-view>
+		</div>
+
+
+
+
+
+		<!--
+			*	*
+			_______________________________________________________________
+				>> Div which display about the NODEJS Server status
+			_______________________________________________________________
+			* *
+		-->
+		<div ng-show = "ServerInformation.divView" id = "serverInformation">
+
+			<button ng-click = "closeServerInformation()" id = "btn_closeServerInformations">
+				<i  class = "zmdi zmdi-close zmd-1x" ></i>
+			</button>
+
+			<button ng-show = "ServerInformation.iconViewOK" class = "iconServerInformation" style = "color: #009900;">
+				<i  class = "zmdi zmdi-check zmdi-hc-3x" ></i>
+			</button>
+
+			<button ng-show = "ServerInformation.iconViewInfo" class = "iconServerInformation" style = "color: #F0F0F0;">
+				<i  class = "zmdi zmdi-info zmdi-hc-3x" ></i>
+			</button>
+
+			<button ng-show = "ServerInformation.iconViewNOK" class = "iconServerInformation" style = "color: #FF0000;">
+				<i  class = "zmdi zmdi-alert-triangle zmdi-hc-3x" ></i>
+			</button>
+
+			<span id  = "labelServerInformation">{{ServerInformation.label}}</span>
+
+		</div>
+
+
+
+
+
+
+		<!--
+			Include JS library
+			*************************************
+		-->
+
+		<!-- AngularJS -->
+		<script src = "../AngularJS/library/angular.min.js"></script>
+		<script src = "../AngularJS/library/angular-route.js"></script>
+
+		<script src = "../AngularJS/controllers/blog.js"></script>
+		<script src = "../AngularJS/controllers/account.js"></script>
+		<script src = "../AngularJS/controllers/articles.js"></script>
+		<script src = "../AngularJS/controllers/comments.js"></script>
+		<script src = "../AngularJS/controllers/chat.js"></script>
+
+		<!-- Link for bootstap framework -->
+		<script src = "../JavaScript/Bootstrap/jquery.js"></script>
+		<script src = "../JavaScript/Bootstrap/bootstrap.min.js"></script>
+
+		<!-- Link for jquery framework -->
+		<script src = "../JavaScript/JQuery/jquery-ui.min.js"  type = "text/javascript"></script>
+
+		<!-- Linj for JS code source -->
+		<script src = "../JavaScript/_codeJS/blog.js"  type = "text/javascript"></script>
+
+	</body>
+
+</html>

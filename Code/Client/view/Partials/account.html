@@ -1,0 +1,182 @@
+<!--
+  ____________________________________________________________________
+    > Partials HTML about Account page
+  ____________________________________________________________________
+
+  * * * * * *
+-->
+<div ng-controller = "accountCrtl">
+
+  <!--
+    > Div **
+      if the user isn't connect or don't have an account on the website
+      **************************************************************************
+  -->
+  <div class = "divNoAccount" ng-show = "!InformationConnectUser.connect">
+
+    <!--
+      > Div to log in
+    -->
+    <div class = "divLogin">
+        <form name = "formConnexionUser" novalidate>
+
+          <h5><b>Pseudo :</b></h5>
+          <input class = "inputAccount" type = "text" name = "Pseudo"
+            ng-model = "Pseudo" ng-minlength = "2" maxlength = "25"
+            placeholder = "Pseudo" required>
+
+          <!-- Error message -->
+          <span class = "errorInputAccount" ng-show = "formConnexionUser.Pseudo.$dirty && formConnexionUser.Pseudo.$error.minlength">
+            Must contain at least 2 characters
+          </span>
+
+          <br /><br />
+
+          <h5><b>Password :</b></h5>
+          <input class = "inputAccount" name = "Password"
+              type = "password" ng-model = "Password" ng-minlength = "5"
+              maxlength = "16" placeholder = "Password" required >
+
+          <!-- Error message -->
+          <span class = "errorInputAccount" ng-show = "formConnexionUser.Password.$dirty && formConnexionUser.Password.$error.minlength">
+            Must contain at least 5 characters
+          </span>
+
+
+          <button class = "btnSubmitConnexionUser" style = 'background-color: #318CE7;' ng-click = "connectUser()" type = "submit" ng-disabled = "formConnexionUser.$invalid">
+            Log in
+          </button>
+
+        </form>
+    </div>
+
+
+
+
+    <!--
+      > Div to sign in
+    -->
+    <div class = "divSignin">
+
+      <form name = "formAddUser" novalidate>
+
+        <!--
+          > Identity
+        -->
+        <h5><b>Identity :</b></h5>
+        <input class = "inputAccount" type = "text" name = "Firstname"
+          ng-model = "Firstname" ng-minlength = "2" maxlength = "30"
+          placeholder = "Firstname" style = "margin-bottom: 10px;" required>
+
+        <input class = "inputAccount" type = "text" name = "Lastname"
+          ng-model = "Lastname" ng-minlength = "2" maxlength = "50"
+          placeholder = "Lastname" required>
+
+        <!-- Error message -->
+        <span class = "errorInputAccount" ng-show = "formAddUser.Firstname.$dirty && formAddUser.Firstname.$error.minlength">
+          Must contain at least 2 characters
+        </span>
+
+        <br />
+
+        <span class = "errorInputAccount" ng-show = "formAddUser.Lastname.$dirty && formAddUser.Lastname.$error.minlength">
+          Must contain at least 2 characters
+        </span>
+
+        <br /><br />
+
+
+        <!--
+          > Account informations
+        -->
+        <h5><b>Account informations :</b></h5>
+        <input class = "inputAccount" type = "email" name = "Email"
+          ng-model = "Email" ng-minlength = "2" maxlength = "60"
+          placeholder = "Email" style = "margin-bottom: 10px;" required>
+
+        <input class = "inputAccount" type = "text" name = "Pseudo_SignIn"
+          ng-model = "Pseudo_SignIn" ng-minlength = "2" maxlength = "25"
+          placeholder = "Pseudo" required>
+
+        <!-- Error message -->
+        <span class = "errorInputAccount" ng-show = "formAddUser.Pseudo_SignIn.$dirty && formAddUser.Pseudo_SignIn.$error.minlength">
+          Must contain at least 2 characters
+        </span>
+
+        <br /><br />
+
+        <!--
+          > Password
+        -->
+        <h5><b>Password :</b></h5>
+        <input class = "inputAccount" name = "Password_SignIN"
+            type = "password" ng-model = "Password_SignIN" ng-minlength = "5"
+            maxlength = "16" placeholder = "Password" style = "margin-bottom: 10px;" required >
+
+        <input class = "inputAccount" type = "password" name = "comfirmPassword_SignIN"
+          ng-model = "comfirmPassword_SignIN" ng-minlength = "5" maxlength = "16"
+          placeholder = "comfirm password" ng-disabled = "formAddUser.Password_SignIN.$invalid" required>
+
+        <!-- Error message -->
+        <span class = "errorInputAccount" ng-show = "formAddUser.Password_SignIN.$dirty && formAddUser.Password_SignIN.$error.minlength">
+          Must contain at least 5 characters
+        </span>
+
+        <span class = "errorInputAccount" style = "color: #FF0000;" ng-show = "formAddUser.comfirmPassword_SignIN.$dirty && checkComfirmPassword(formAddUser.Password_SignIN.$viewValue, formAddUser.comfirmPassword_SignIN.$viewValue)">
+          Password ar not identical
+        </span>
+
+
+        <button class = "btnSubmitSignIn" style = 'background-color: #318CE7;' ng-click = "addUser()" type = "submit" ng-disabled = "formAddUser.$invalid">
+          Sign in
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+
+  <!--
+    > Div **
+      if the user is connect
+      **************************************************************************
+  -->
+  <div class = "divAccount" ng-show = "InformationConnectUser.connect">
+    <div class = "pictureAccount">
+      <i class = "zmdi zmdi-account-circle zmdi-hc-5x" style = "color: #3D3935; float: left;"></i>
+    </div>
+
+    <div class = "divInformationsAccount">
+      <h1 style = "color: #318CE7; padding-bottom: 2px;"><b>{{InformationConnectUser.Pseudo}}</b></h1>
+      <h5><i>{{InformationConnectUser.Firstname}} {{InformationConnectUser.Lastname}}</i></h5>
+      <h5><i>{{InformationConnectUser.Email}}</i></h5>
+
+      <hr style = "border: 1px solid #318CE7; width: 80%;"/>
+
+      <div class = "divActionOnAccount">
+
+        <button id = "btnEditAccount" data-toggles = "tooltip" data-placement = "bottom" title = "Edit">
+          <i class = "zmdi zmdi-edit animated infinite wobble zmdi-hc-2x"></i>
+        </button>
+
+        <button id = "btnLogoutAccount" ng-click = "logOut()" data-toggles = "tooltip" data-placement = "bottom" title = "Log out">
+          <i class = "zmdi zmdi-sign-in zmdi-hc-2x"></i>
+        </button>
+
+        <button id = "btnRemoveAccount" ng-click = "removeAccount()" data-toggles = "tooltip" data-placement = "bottom" title = "Remove Account">
+          <i class = "zmdi zmdi-delete zmdi-hc-2x"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+</div>

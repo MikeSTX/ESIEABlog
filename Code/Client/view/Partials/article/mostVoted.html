@@ -1,0 +1,196 @@
+<!--
+  ____________________________________________________________________
+    > Partials HTML about most Voted article page
+  ____________________________________________________________________
+
+  * * * * * *
+-->
+<div ng-controller = "articlesCrtl">
+
+  <!--
+    > Display all article
+    _________________________________________
+  -->
+  <div ng-repeat = "allArticles in allArticles | orderBy: ['-nbThumb'] | filter: {title:searchArticle}">
+
+    <div class = "divArticle">
+
+      <div class = "titleArticle">
+        {{allArticles.title}}
+      </div>
+
+
+      <div class = "headerArticle">
+        {{allArticles.header}}
+      </div>
+
+      <div class = "contentArticle">
+        {{allArticles.content}}
+      </div>
+
+      <hr style = "border: 1px solid #CFC9C4; width: 30%; color: #FFF; background-color: #FFF;"/>
+
+      <!--
+        > All socials networks icons
+      -->
+      <div class = "divSocialNetwork">
+
+        <button class = "btnSocialNetwork" style = "background-color: #3B5998;" title = "facebook">
+          <i class = "zmdi zmdi-facebook" style = "color: #FFF;"></i>
+        </button>
+
+        <button class = "btnSocialNetwork" style = "background-color: #4099FF;">
+          <i class="zmdi zmdi-twitter" style = "color: #FFF;"></i>
+        </button>
+
+        <button class = "btnSocialNetwork" style = "background-color: #00933B;">
+          <i class="zmdi zmdi-google-glass" style = "color: #FFF;"></i>
+        </button>
+
+        <button class = "btnSocialNetwork" style = "background-color: #C8232C;">
+          <i class="zmdi zmdi-pinterest-box" style = "color: #FFF;"></i>
+        </button>
+
+      </div>
+
+
+      <!--
+        > Buttons to deal with the article
+          Only the author of the article can see this div
+      -->
+    	<div class = "divActionAuthorOnArticle"  ng-show = "isUserConnectAuthor(allArticles.author, InformationConnectUser.Pseudo)" >
+
+        <button class = "btnActionAuthorOnArticle" ng-click = "deleteArticle(allArticles._id)">
+          <i class = "zmdi zmdi-delete"></i>
+        </button>
+
+        <button class = "btnActionAuthorOnArticle">
+          <i class = "zmdi zmdi-edit"></i>
+        </button>
+
+      </div>
+
+
+
+      <!--
+        > Div to comment the article
+      -->
+      <div ng-controller = "commentCtrl" class = "divCommentArticle">
+        <table class = "tabComments">
+
+          <form name = "formAddComment" novalidate>
+
+            <!-- row title -->
+        		<tr>
+              <td>
+                <h5 style = "text-align: right;"><b>Title :</b></h5>
+              </td>
+
+              <td>
+                <input class = "inputTitleComment" name = "titleComment" type = "text" ng-model = "titleComment" ng-minlength = "1" maxlength = "70" placeholder = "Title" required>
+              </td>
+
+              <td>
+              </td>
+            </tr>
+
+            <!-- Row comment -->
+        		<tr style = "vertical-align: top;">
+              <td>
+                <h5 style = "text-align: right;"><b>Comment :</b></h5>
+              </td>
+
+              <td>
+                <textarea class = "textAreaComment" name = "textComment" type = "text" ng-model = "textComment" ng-minlength = "1" maxlength = "200" required></textarea>
+              </td>
+
+              <td>
+                <button class = "btnSubmitComment" type = "submit" ng-click = "addNewComment(allArticles._id);" ng-disabled = "formAddComment.$invalid">
+                  <i class="zmdi zmdi-mail-send zmdi-hc-2x" style = "margin-left: 5px;"></i>
+                </button>
+              </td>
+            </tr>
+          </form>
+        </table>
+
+
+        <!--
+          > Display all comments according to the article
+        -->
+        <div class = "displayAllComments" >
+
+          <div class = "titleAllsComments">
+            <i class = "zmdi zmdi-comment-outline zmdi-hc-3x" style = "color: #318CE7; display: inline;"></i>
+            <h2 style = "display: inline; margin-left: 10px;"><b>All comments :</b></h2>
+          </div>
+
+          <div class = "divContainerAllComments">
+
+            <div class = "divDisplayComment" ng-repeat = "allComments in allComments | orderBy: ['-date'] | filter: {refArticle: allArticles._id}">
+
+              <div class = "iconDisplayComment">
+                <i class = "zmdi zmdi-account-circle zmdi-hc-3x" style = "color: #3D3935;"></i>
+              </div>
+
+              <div class = "containDisplayComment">
+                <h5><b>{{allComments.title}} </b></h5>
+                <h6>{{allComments.comment}}</h6>
+
+                <div class = "informationDisplayComment">
+                  <h6 style = "display: inline; float: right; margin-left: 3px; color: #318CE7;"><i> {{allComments.author}} </i></h6>
+                  <h6 style = "display: inline; float: right; color: #318CE7;"><i>{{allComments.date | date:"MM/dd/yyyy 'at' h:mma"}} | </i></h6>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--
+        > Div to let the users interact with the article
+             - vote
+             - favorite
+             - display the author and the date of publication
+      -->
+    	<div class = "div_infoArticle">
+
+        <!--
+          Box when the user can vote for the article
+            > thumbUp
+            > thumbDown
+        -->
+      	<div class = "divThumb">
+
+          <div class = "thumbUp">
+            <button class = "btnThumbArticle" ng-click = "articleThumbUp(allArticles._id)">
+              <i class="zmdi zmdi-thumb-up zmdi-hc-2x"></i>
+            </button>
+
+            <span class = "infoVote">{{allArticles.thumbUp}}</span>
+          </div>
+
+          <div class = "thumbDown">
+            <span class = "infoVote">{{allArticles.thumbDown}}</span>
+
+            <button class = "btnThumbArticle" ng-click = "articleThumbDown(allArticles._id)">
+              <i class="zmdi zmdi-thumb-down zmdi-hc-2x"></i>
+            </button>
+          </div>
+
+        </div>
+
+
+        <div class = "divInfoUser">
+              <h5 style = "float: right;"><i class="zmdi zmdi-account-circle" style = "margin-right: 2px;"></i><b>{{allArticles.author}}</b></h5>
+              <h6>{{allArticles.date | date:"MM/dd/yyyy 'at' h:mma"}}</h6>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

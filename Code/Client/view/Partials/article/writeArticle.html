@@ -1,0 +1,62 @@
+<!--
+  ____________________________________________________________________
+    > Partials HTML about write a new Articles page
+  ____________________________________________________________________
+
+  * * * * * *
+-->
+
+
+<!--
+  > Display if the user is connect
+    He can't write an artcile
+    **  **  **  **  **   ** **  **  **  **
+-->
+<div class = "divNoWriteArticle" ng-show = "!InformationConnectUser.connect">
+
+  <div class = "divIconNoWriteArticle">
+    <i class = "zmdi zmdi-block zmdi-hc-5x" style = "color: #FF0000;"></i>
+  </div>
+
+  <p class = "labelNoWriteArticle">
+    Sorry, you're not connect to your blog's account, so you're not allowed to
+    publish a new article on ESIEA Blog
+    <br /><br />
+    if you wan't to, you can login or sign in by cliking <a ng-href = "#/account">here</a>
+  </p>
+
+</div>
+
+
+<!--
+  > Display if the user is connect
+    He can write an artcile
+    **  **  **  **  **   ** **  **  **  **
+-->
+<div ng-controller = "articlesCrtl" ng-show = "InformationConnectUser.connect">
+
+  <form name = "formNewArticle" novalidate>
+
+    <input class = "inputTitleNewArticle" type = "text" name = "TitleNewArticle"
+      ng-model = "TitleNewArticle" ng-minlength = "2" maxlength = "75"
+      placeholder = "Title" required>
+
+    <br /><br /><br /><br />
+
+    <h4><b>Header :</b></h4>
+    <textarea class = "textAreaHeaderNewArticle" name = "textHeaderNewArticle" ng-model = "textHeaderNewArticle" ng-minlenght = "10" maxlength="300"></textarea>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <h4><b>Content :</b></h4>
+    <textarea class = "textAreaContentNewArticle" name = "textContentNewArticle" ng-model = "textContentNewArticle" ng-minlenght = "10" maxlength="3000"></textarea>
+
+    <button class = "btnPublishNewArticle" ng-click = "addNewArticle()" type = "submit" ng-disabled = "formNewArticle.$invalid">
+      Publish
+    </button>
+
+  </form>
+
+  <br /><br /><br /><br /><br /><br />
+
+</div>
